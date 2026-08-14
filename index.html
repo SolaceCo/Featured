@@ -4,306 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FEATURED — Issue 01</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Kalam:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     
-    <meta property="og:title" content="FEATURED — Issue 01 / Weekly Drop">
-    <meta property="og:description" content="One thing, once a week. No archives.">
+    <meta property="og:title" content="FEATURED — Issue 01">
+    <meta property="og:description" content="One thing from Jamaican internet, once a week.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop">
+    <meta property="og:image" content="https://yourusername.github.io/featured/images/issue-01.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FEATURED — Issue 01">
-    <meta name="twitter:description" content="One thing, once a week. No archives.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop">
-
-    <style>
-        :root {
-            --bg: #FBF9F5;
-            --text: #1A1A1A;
-            --text-muted: #8C8C8C;
-            --border: #E5E2DC;
-            --accent: #2C2C2C;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', Georgia, serif;
-            font-size: 16px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .header-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text);
-        }
-
-        .header-meta {
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .stage {
-            margin-bottom: 60px;
-        }
-
-        .media-container {
-            width: 100%;
-            margin-bottom: 40px;
-            border-radius: 4px;
-            overflow: hidden;
-            background-color: #F0EDE7;
-        }
-
-        .media-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .media-container video,
-        .media-container iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: none;
-            display: block;
-        }
-
-        .audio-block {
-            padding: 32px;
-            background-color: #F5F3EF;
-            border-radius: 4px;
-        }
-
-        .audio-meta {
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 16px;
-        }
-
-        .audio-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .play-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--text);
-            color: var(--bg);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .play-btn:hover {
-            transform: scale(1.05);
-            background: var(--accent);
-        }
-
-        .play-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        .audio-info {
-            flex: 1;
-        }
-
-        .track-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 18px;
-            font-weight: 400;
-            margin-bottom: 4px;
-        }
-
-        .track-artist {
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 3px;
-            background: var(--border);
-            margin-top: 12px;
-            border-radius: 2px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: var(--text);
-            transition: width 0.1s linear;
-        }
-
-        .headline {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 28px;
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -0.01em;
-        }
-
-        .commentary {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text);
-            margin-bottom: 24px;
-            max-width: 640px;
-        }
-
-        .source-link {
-            font-family: 'Space Mono', monospace;
-            font-size: 12px;
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 2px;
-            transition: border-color 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .source-link:hover {
-            border-color: var(--text);
-        }
-
-        .arrow {
-            transition: transform 0.2s ease;
-        }
-
-        .source-link:hover .arrow {
-            transform: translateX(4px);
-        }
-
-        .submitter {
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            display: block;
-            margin-top: 4px;
-        }
-
-        .footer {
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
-            text-align: center;
-        }
-
-        .footer-meta {
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 640px) {
-            .header {
-                flex-direction: column;
-                gap: 6px;
-                align-items: flex-start;
-            }
-
-            .headline {
-                font-size: 24px;
-            }
-
-            .media-container {
-                margin-left: -20px;
-                margin-right: -20px;
-                border-radius: 0;
-                width: calc(100% + 40px);
-            }
-        }
-    </style>
 </head>
 <body>
 
     <div class="container">
         
         <header class="header">
-            <div class="header-title">FEATURED</div>
-            <div class="header-meta">[ Issue 01 — Aug 13, 2026 / Weekly Drop ]</div>
+            <a href="index.html" class="header-title">FEATURED</a>
+            <nav class="header-nav">
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+            </nav>
         </header>
 
-        <main class="stage">
+        <main>
             
-            <div class="media-container" id="imageMedia">
-                <img src="gabriele-merlino-3R8tIwRtqN0-unsplash.jpg" alt="Featured drop">
+            <div class="issue-meta">
+                <span class="issue-number">[ Issue 01 · Aug 10–16, 2026 ]</span>
+                <span class="category-tag">Comment</span>
             </div>
 
-            <h1 class="headline"> The Turquoise Mountain Lake </h1>
+            <div class="media-container">
+                <img src="images/issue-01.jpg" alt="Issue 01 featured content">
+            </div>
+
+            <h1 class="headline">Your Headline Goes Here</h1>
+            
+            <span class="verdict-label">[ The Verdict ]</span>
             
             <p class="commentary">
-                Framed by jagged, snow-dusted peaks, the turquoise mountain lake lies still and glasslike, cradling the sky in its deep glacial waters. Sunlight ignites its vivid hue a striking blend of radiant cyan and tranquil sapphire while crisp Alpine air carries the quiet hush of the surrounding pine forest.
+                This is where you write your 2–4 sentences. Not a caption. A judgment. Why did this specific piece of Jamaican internet culture earn the spot this week? What about it was sharp, funny, or true? Your voice is the product here.
             </p>
             
-            <a href="https://unsplash.com/photos/turquoise-mountain-lake-with-boats-and-lush-green-forests-3R8tIwRtqN0" class="source-link" target="_blank" rel="noopener">
-                Explore Full Source <span class="arrow">→</span>
+            <a href="https://twitter.com/username/status/123" class="source-link" target="_blank" rel="noopener">
+                View Original Source <span class="arrow">→</span>
             </a>
-            
-            <span class="submitter">[ Submitted by @handle ]</span>
 
         </main>
 
-        <footer class="footer">
-            <div class="footer-meta">Resets every 7 days. Previous drops expire.</div>
+        <footer class="site-footer">
+            <div class="footer-nav">
+                <a href="index.html">Current Issue</a>
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-meta">Curated from Jamaican internet. One thing a week.</div>
         </footer>
 
     </div>
