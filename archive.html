@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive — FEATURED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Kalam:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="header">
+            <a href="index.html" class="header-title">FEATURED</a>
+            <nav class="header-nav">
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+
+        <h1 class="archive-header">The Archive</h1>
+        <p class="archive-sub">Every issue, permanently preserved.</p>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterIssues('all')">All</button>
+            <button class="filter-btn" onclick="filterIssues('comment')">Comment</button>
+            <button class="filter-btn" onclick="filterIssues('clip')">Clip</button>
+            <button class="filter-btn" onclick="filterIssues('reply')">Reply</button>
+            <button class="filter-btn" onclick="filterIssues('take')">Take</button>
+            <button class="filter-btn" onclick="filterIssues('chaos')">Chaos</button>
+        </div>
+
+        <div class="archive-wall" id="archiveGrid">
+            
+            <a href="issues/issue-01.html" class="polaroid" data-category="comment">
+                <div class="polaroid-img-wrap contain">
+                    <img src="images/issue-01.jpg" alt="Issue 01">
+                </div>
+                <div class="polaroid-caption">
+                    <div class="polaroid-issue">Issue 01 · Aug 10–16, 2026</div>
+                    <h2 class="polaroid-title">Your Headline Goes Here</h2>
+                    <p class="polaroid-verdict">Your handwritten verdict goes here. One sentence that makes someone want to click.</p>
+                    <div class="polaroid-source">
+                        <span>twitter.com</span>
+                        <span>View →</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-nav">
+                <a href="index.html">Current Issue</a>
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-meta">Curated from Jamaican internet. One thing a week.</div>
+        </footer>
+
+    </div>
+
+    <script>
+        function filterIssues(category) {
+            const items = document.querySelectorAll('.polaroid');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.style.opacity = '1', 10);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.display = 'none', 200);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
 
